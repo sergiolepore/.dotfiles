@@ -1,0 +1,27 @@
+#!/bin/bash
+
+#"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+#   Filename: 2-nvm-node-config.install                                      "
+# Maintainer: Sergio Lepore <sergio.d.lepore@gmail.com>                      "
+#        URL: https://github.com/sergiolepore/.dotfiles                      "
+#                                                                            "
+#"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+. 0-bin/_commons.sh
+
+e_header ">> Setting up node.js with nvm"
+
+if ! cmd_exists nvm; then
+    e_error "Oops! nvm is not installed. Did you run \"1-nvm-app\" script?"
+    exit 1
+fi
+
+nvm install -s v0.10.26
+nvm alias default 0.10.26
+
+if ! cmd_exists node; then
+    e_error "Oops! Something went wrong with nvm :("
+    exit 1
+fi
+
+e_success "Done."

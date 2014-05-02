@@ -1,0 +1,25 @@
+#!/bin/bash
+
+#"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+#   Filename: 1-nvm-app.install                                              "
+# Maintainer: Sergio Lepore <sergio.d.lepore@gmail.com>                      "
+#        URL: https://github.com/sergiolepore/.dotfiles                      "
+#                                                                            "
+#"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+. 0-bin/_commons.sh
+
+e_header ">> Installing nvm"
+
+if ! cmd_exists curl; then
+    e_error "Oops! curl is not installed. Did you run the \"tools\" script?"
+    exit 1
+fi
+
+if ! cmd_exists nvm; then
+    curl https://raw.githubusercontent.com/creationix/nvm/v0.5.1/install.sh | PROFILE=~/.zshrc bash
+
+    e_success "Done."
+else
+    e_warning "Already installed."
+fi

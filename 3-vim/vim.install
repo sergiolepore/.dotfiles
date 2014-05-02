@@ -1,0 +1,25 @@
+#!/bin/bash
+
+#"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+#   Filename: vim.install                                                    "
+# Maintainer: Sergio Lepore <sergio.d.lepore@gmail.com>                      "
+#        URL: https://github.com/sergiolepore/.dotfiles                      "
+#                                                                            "
+#"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+. 0-bin/_commons.sh
+
+e_header ">> Installing vim"
+
+if ! cmd_exists vim; then
+    sudo apt-get -qq install vim
+
+    if ! cmd_exists vim; then
+        e_error "Oops! Seems that installation failed :("
+        exit 1
+    fi
+
+    e_success "Done."
+else
+    e_warning "Already installed."
+fi

@@ -1,0 +1,4 @@
+alias npp="npm publish"
+alias npu="npm update"
+alias npi="npm install --save "
+alias npig="npm install -g --save "

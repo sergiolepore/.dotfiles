@@ -1,0 +1,22 @@
+#!/bin/bash
+
+#"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+#   Filename: 2-sublime-settings.install                                     "
+# Maintainer: Sergio Lepore <sergio.d.lepore@gmail.com>                      "
+#        URL: https://github.com/sergiolepore/.dotfiles                      "
+#                                                                            "
+#"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+. 0-bin/_commons.sh
+
+e_header ">> Setting up Sublime Text user preferences"
+
+sublime_text_user_dir="$HOME/.config/sublime-text-2/Packages/User"
+
+if [[ -d "${sublime_text_user_dir}" || -L "${sublime_text_user_dir}" ]] ; then
+    mv $sublime_text_user_dir "$sublime_text_user_dir.bak"
+fi
+
+ln -sf $DOTFILES/sublime/Packages_User $sublime_text_user_dir
+
+e_success "Done."

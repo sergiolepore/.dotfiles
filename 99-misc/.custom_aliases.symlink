@@ -1,0 +1,17 @@
+alias clr="clear"
+alias rst="reset"
+alias vgr="vagrant up && vagrant ssh"
+alias vgrs="vagrant ssh"
+alias vgrh="vagrant halt"
+alias vgrr="vagrant reload"
+
+function xdg-open-clean() {
+  xdg-open "$1" &> $HOME/.xsession-errors &
+}
+
+function sublime-text-clean() {
+  sublime-text "$1" &> $HOME/.sublime-errors &
+}
+
+alias ]="xdg-open-clean"
+alias st="sublime-text-clean"

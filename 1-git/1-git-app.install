@@ -1,0 +1,25 @@
+#!/bin/bash
+
+#"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+#   Filename: 1-git-app.install                                              "
+# Maintainer: Sergio Lepore <sergio.d.lepore@gmail.com>                      "
+#        URL: https://github.com/sergiolepore/.dotfiles                      "
+#                                                                            "
+#"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+. 0-bin/_commons.sh
+
+e_header ">> Installing git"
+
+if ! cmd_exists git; then
+    sudo apt-get -qq install git
+
+    if ! cmd_exists git; then
+        e_error "Oops! Seems that installation failed :("
+        exit 1
+    fi
+
+    e_success "Done."
+else
+    e_warning "Already installed."
+fi

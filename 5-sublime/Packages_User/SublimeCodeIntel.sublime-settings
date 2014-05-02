@@ -1,0 +1,20 @@
+{
+    "codeintel_max_recursive_dir_depth": 20,
+    "codeintel_selected_catalogs": [
+        "jQuery", "Rails", "Prototype", "HTML5", "PECL"
+    ],
+    "codeintel_config": {
+        "JavaScript": {
+            "codeintel_scan_files_in_project": true,
+            "codeintel_max_recursive_dir_depth": 20,
+            "javascriptExtraPaths": [
+                "/home/sergio/node_modules","/usr/lib/node_modules"
+            ]
+        },
+        "PHP": {
+            "phpExtraPaths": [],
+            "codeintel_scan_files_in_project": true,
+            "codeintel_max_recursive_dir_depth": 20
+        }
+    }
+}

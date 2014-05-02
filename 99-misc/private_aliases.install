@@ -1,0 +1,26 @@
+#!/bin/bash
+
+#"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+#   Filename: private_aliases.install                                        "
+# Maintainer: Sergio Lepore <sergio.d.lepore@gmail.com>                      "
+#        URL: https://github.com/sergiolepore/.dotfiles                      "
+#                                                                            "
+#"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+. 0-bin/_commons.sh
+
+e_header ">> Generating private aliases file"
+
+private_aliases_file="$HOME/.private_aliases"
+
+if [[ ! -f $private_aliases_file ]]; then
+    cat > $private_aliases_file <<EOF
+# Here you can put all those aliases that you don't want to push to the git
+# repository
+
+EOF
+
+    e_success "Done."
+else
+    e_warning "$private_aliases_file already exists. Skipping."
+fi

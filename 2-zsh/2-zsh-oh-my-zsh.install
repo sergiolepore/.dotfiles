@@ -1,0 +1,32 @@
+#!/bin/bash
+
+#"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+#   Filename: 2-zsh-oh-my-zsh.install                                        "
+# Maintainer: Sergio Lepore <sergio.d.lepore@gmail.com>                      "
+#        URL: https://github.com/sergiolepore/.dotfiles                      "
+#                                                                            "
+#"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+. 0-bin/_commons.sh
+
+e_header ">> Installing oh-my-zsh"
+
+if ! cmd_exists curl; then
+    e_error "Oops! curl is not installed. Did you run \"tools\" script?"
+    exit 1
+fi
+
+curl -L http://install.ohmyz.sh | bash
+
+# workaround for weird bug
+sudo chsh -s $(which zsh) $(whoami)
+
+zshrc_file="$HOME/.zshrc"
+
+if [[ -f $zshrc_file ]]; then
+    mv $zshrc_file "$zshrc_file.bak"
+fi
+
+ln -sf $zshrc_file "$DOTFILES/2-zsh/.zshrc"
+
+e_sucess "Done."

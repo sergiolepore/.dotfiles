@@ -1,0 +1,48 @@
+#!/bin/bash
+
+#"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+#   Filename: 2-git-config.install                                           "
+# Maintainer: Sergio Lepore <sergio.d.lepore@gmail.com>                      "
+#        URL: https://github.com/sergiolepore/.dotfiles                      "
+#                                                                            "
+#"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+. 0-bin/_commons.sh
+
+already_configured=false
+
+function prompt_for_git() {
+    git_name=$(git config --get user.name)
+    git_email=$(git config --get user.email)
+    
+    if [ -n "$git_name" ]; then
+        already_configured=true
+        echo "Git already configured:"
+        echo "   name: '$git_name',  email: '$git_email' "
+    else
+        read -p "===== [Git config] Please enter your name: " git_name
+        read -p "===== [Git config] Please enter your email: " git_email
+    fi
+}
+
+e_header ">> Setting up git config"
+
+prompt_for_git
+
+git_config_file="$HOME/.gitconfig"
+
+if ! $already_configured; then
+    # Add user to gitconfig
+    cat > $git_config_file <<EOF
+[user]
+    name = $git_name
+    email = $git_email
+
+EOF
+
+    # Add the rest of gitconfig
+    cat $DOTFILES/git/gitconfig >> $git_config_file
+fi
+
+
+e_success "Done."

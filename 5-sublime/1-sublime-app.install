@@ -1,0 +1,48 @@
+#!/bin/bash
+
+#"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+#   Filename: 1-sublime-app.install                                          "
+# Maintainer: Sergio Lepore <sergio.d.lepore@gmail.com>                      "
+#        URL: https://github.com/sergiolepore/.dotfiles                      "
+#                                                                            "
+#"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+. 0-bin/_commons.sh
+
+e_header ">> Installing Sublime Text 2"
+
+if ! cmd_exists sublime-text; then
+    apt_add_new_ppa webupd8team sublime-text-2
+    sudo apt-get update
+    sudo apt-get -qq install sublime-text
+
+    if ! cmd_exists sublime-text; then
+        e_error "Oops! Seems that installation failed :("
+        exit 1
+    fi
+
+    e_success "Done."
+else
+    e_warning "Already installed."
+fi
+
+e_header ">> Installing Sublime Package Control"
+
+if ! cmd_exists curl; then
+    e_error "Oops! curl is not installed. Did you run the \"tools\" script?"
+    exit 1
+fi
+
+PKGCONTROL_SOURCE="https://sublime.wbond.net/Package%20Control.sublime-package"
+PKGCONTROL_TARGET="$HOME/.config/sublime-text-2/Installed Packages/Package Control.sublime-package"
+
+if [[ ! -f $PKGCONTROL_TARGET ]]; then
+    curl -o $PKGCONTROL_TARGET $PKGCONTROL_SOURCE
+
+    if [[ ! -f $PKGCONTROL_TARGET ]]; then
+        e_error "Oops! Package Control installation failed :("
+        exit 1
+    fi
+fi
+
+e_success "Done."

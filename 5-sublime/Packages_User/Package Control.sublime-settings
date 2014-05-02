@@ -1,0 +1,24 @@
+{
+	"installed_packages":
+	[
+		"Deep Blue See",
+		"DocBlockr",
+		"EJS",
+		"Emmet",
+		"Git",
+		"GitGutter",
+		"GitHub Flavored Markdown Preview",
+		"JSONLint",
+		"Markdown Extended",
+		"Markdown Preview",
+		"Monokai Extended",
+		"Package Control",
+		"PHP Getters and Setters",
+		"Pretty JSON",
+		"Stylus",
+		"SublimeLinter",
+		"Theme - Glacier",
+		"Theme - Soda",
+		"Theme - Spacegray"
+	]
+}

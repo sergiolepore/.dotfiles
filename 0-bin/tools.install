@@ -1,0 +1,26 @@
+#!/bin/bash
+
+#"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+#   Filename: tools.install                                                  "
+# Maintainer: Sergio Lepore <sergio.d.lepore@gmail.com>                      "
+#        URL: https://github.com/sergiolepore/.dotfiles                      "
+#                                                                            "
+#"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+. 0-bin/_commons.sh
+
+e_header ">> Installing curl"
+
+if ! cmd_exists curl; then
+    sudo apt-get -qq install curl
+
+    e_success "Done."
+else
+    e_warning "Already installed."
+fi
+
+e_header ">> Installing build-essential and libssl-dev"
+
+sudo apt-get -qq install build-essential libssl-dev
+
+e_success "Done."

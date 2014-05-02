@@ -1,0 +1,23 @@
+[core]
+    editor = vim
+
+[credential]
+    helper = cache --timeout=3600
+
+[diff]
+    tool = meld
+
+[color]
+    ui = auto
+    branch = auto
+    diff = auto
+    status = always
+
+[rerere]
+    enabled = true
+
+[push]
+    default = current
+
+[pull]
+    rebase = true
