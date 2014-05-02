@@ -1,0 +1,25 @@
+#!/bin/bash
+
+#"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+#   Filename: meld-app.install                                               "
+# Maintainer: Sergio Lepore <sergio.d.lepore@gmail.com>                      "
+#        URL: https://github.com/sergiolepore/.dotfiles                      "
+#                                                                            "
+#"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+. 0-bin/_commons.sh
+
+e_header ">> Installing Meld Diff Viewer"
+
+if ! cmd_exists meld; then
+    sudo apt-get -qq install meld
+
+    if ! cmd_exists meld; then
+        e_error "Oops! Meld installation failed :("
+        exit 1
+    fi
+
+    e_success "Done."
+else
+    e_warning "Already installed."
+fi
