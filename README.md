@@ -33,3 +33,7 @@ to install `nvm` (by running `1-nvm-app.install`). Once completed, running
 version of Node.js, using the `nvm` application installed before. If you don't 
 know what `nvm` is, please refer to 
 [https://github.com/creationix/nvm](https://github.com/creationix/nvm)
+
+#### Do I need to execute all `.install` scripts manually?
+
+Nope, you just have to run `./install.sh`. This script will do the magic.
