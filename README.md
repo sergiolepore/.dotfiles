@@ -6,6 +6,10 @@ These are my .dotfiles. There are many like them, but these ones are mine.
    <img src="http://i5.minus.com/ic2mwZVtWxUgg.png">
 </p>
 
+<p align="center">
+    <img src="http://i2.minus.com/iDUwD3xZdAUB5.png">
+</p>
+
 ## Install guide
 
 1. Clone it into `~`
