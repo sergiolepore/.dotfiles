@@ -34,7 +34,8 @@
 	],
 	"rulers":
 	[
-		80, 100
+		80,
+		100
 	],
 	"soda_classic_tabs": true,
 	"soda_folder_icons": true,

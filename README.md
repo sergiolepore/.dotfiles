@@ -3,11 +3,11 @@
 These are my .dotfiles. There are many like them, but these ones are mine.
 
 <p align="center">
-   <img src="http://i5.minus.com/ic2mwZVtWxUgg.png">
+   <img src="http://i7.minus.com/i9BsJHJ1bcxqd.png">
 </p>
 
 <p align="center">
-    <img src="http://i2.minus.com/iDUwD3xZdAUB5.png">
+    <img src="http://i2.minus.com/iUU9oha71HjQM.png">
 </p>
 
 ## Install guide
