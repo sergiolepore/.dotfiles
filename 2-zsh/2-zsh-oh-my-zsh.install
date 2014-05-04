@@ -7,7 +7,7 @@
 #                                                                            "
 #"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-. 0-bin/_commons.sh
+. _commons.sh
 
 e_header ">> Installing oh-my-zsh"
 
@@ -18,6 +18,8 @@ fi
 
 curl -L http://install.ohmyz.sh | bash
 
+e_warning "Applying a workaround for \"PAM: Authentication failure\" error"
+
 # workaround for weird bug
 sudo chsh -s $(which zsh) $(whoami)
 
@@ -27,6 +29,9 @@ if [[ -f $zshrc_file ]]; then
     mv $zshrc_file "$zshrc_file.bak"
 fi
 
-ln -sf $zshrc_file "$DOTFILES/2-zsh/.zshrc"
+ln -sf "$DOTFILES/2-zsh/.zshrc" $zshrc_file
 
-e_sucess "Done."
+e_success "Done."
+
+#e_warning "HEADS UP! You MUST logout and login again to load zsh and oh-my-zsh"
+#e_warning "This script will stop now. Once you are logged in, restart ./install.sh and skip all scripts that you already executed"

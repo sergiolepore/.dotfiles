@@ -14,7 +14,7 @@
 #                                                                            "
 #"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-. 0-bin/_commons.sh
+. _commons.sh
 
 if [[ $EUID -eq 0 ]]; then
     echo -e "\e[01;31mPlease do not use sudo to run this script!\e[00m" 2>&1
@@ -56,7 +56,7 @@ for installer in $installers; do
 
     if ! $install_all; then
         while true; do
-            echo "Do you want to run $installer_basename script?"
+            echo -e "\nDo you want to run $installer_basename script?"
             echo "[i]nstall, [I]nstall all, [s]kip, [S]kip all "
             read answer
             case $answer in
@@ -119,7 +119,7 @@ for file in $symlinks; do
         fi
     fi
 
-    echo "→ Installing $target"
+    echo -e "\n→ Installing $target\n"
     ln -s "$PWD/$file" "$target"
 done
 

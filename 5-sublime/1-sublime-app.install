@@ -7,7 +7,7 @@
 #                                                                            "
 #"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-. 0-bin/_commons.sh
+. _commons.sh
 
 e_header ">> Installing Sublime Text 2"
 
@@ -37,7 +37,13 @@ PKGCONTROL_SOURCE="https://sublime.wbond.net/Package%20Control.sublime-package"
 PKGCONTROL_TARGET="$HOME/.config/sublime-text-2/Installed Packages/Package Control.sublime-package"
 
 if [[ ! -f $PKGCONTROL_TARGET ]]; then
-    curl -o $PKGCONTROL_TARGET $PKGCONTROL_SOURCE
+    SUBLIME_PKGDIR="$HOME/.config/sublime-text-2/Installed Packages"
+
+    if [[ ! -d $SUBLIME_PKGDIR ]]; then
+        mkdir -p "$SUBLIME_PKGDIR"
+    fi
+
+    curl -o "${PKGCONTROL_TARGET}" "${PKGCONTROL_SOURCE}"
 
     if [[ ! -f $PKGCONTROL_TARGET ]]; then
         e_error "Oops! Package Control installation failed :("

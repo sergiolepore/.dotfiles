@@ -7,14 +7,14 @@
 #                                                                            "
 #"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-. 0-bin/_commons.sh
+. _commons.sh
 
 already_configured=false
 
 function prompt_for_git() {
     git_name=$(git config --get user.name)
     git_email=$(git config --get user.email)
-    
+
     if [ -n "$git_name" ]; then
         already_configured=true
         echo "Git already configured:"
@@ -41,7 +41,7 @@ if ! $already_configured; then
 EOF
 
     # Add the rest of gitconfig
-    cat $DOTFILES/git/gitconfig >> $git_config_file
+    cat $DOTFILES/1-git/gitconfig >> $git_config_file
 fi
 
 

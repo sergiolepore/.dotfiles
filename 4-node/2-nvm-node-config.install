@@ -7,11 +7,12 @@
 #                                                                            "
 #"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-. 0-bin/_commons.sh
+. _commons.sh
+. ~/.profile
 
 e_header ">> Setting up node.js with nvm"
 
-if ! cmd_exists nvm; then
+if ! program_is_installed nvm; then
     e_error "Oops! nvm is not installed. Did you run \"1-nvm-app\" script?"
     exit 1
 fi

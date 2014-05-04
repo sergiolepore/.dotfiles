@@ -7,7 +7,7 @@
 #                                                                            "
 #"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-. 0-bin/_commons.sh
+. _commons.sh
 
 e_header ">> Installing zsh"
 
@@ -20,6 +20,8 @@ if ! cmd_exists zsh; then
     fi
 
     e_success "Done."
+#    e_warning "HEADS UP! You MUST logout and login again to load zsh and oh-my-zsh"
+#    e_warning "This script will stop now. Once you are logged in, restart ./install.sh and skip all scripts that you already executed"
 else
     e_warning "Already installed."
 fi

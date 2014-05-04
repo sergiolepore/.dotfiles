@@ -7,14 +7,19 @@
 #                                                                            "
 #"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-. 0-bin/_commons.sh
+. _commons.sh
 
 e_header ">> Setting up Sublime Text user preferences"
 
-sublime_text_user_dir="$HOME/.config/sublime-text-2/Packages/User"
+sublime_text_pkg_dir="$HOME/.config/sublime-text-2/Packages"
+sublime_text_user_dir="$sublime_text_pkg_dir/User"
 
 if [[ -d "${sublime_text_user_dir}" || -L "${sublime_text_user_dir}" ]] ; then
     mv $sublime_text_user_dir "$sublime_text_user_dir.bak"
+fi
+
+if [[ ! -d "$sublime_text_pkg_dir" ]]; then
+    mkdir -p $sublime_text_pkg_dir
 fi
 
 ln -sf $DOTFILES/sublime/Packages_User $sublime_text_user_dir
