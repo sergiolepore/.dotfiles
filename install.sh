@@ -123,5 +123,6 @@ for file in $symlinks; do
     ln -s "$file" "$target"
 done
 
+e_warning "HEADS UP! You MUST logout and login again to load zsh and oh-my-zsh"
 e_success "Done."
 e_header "Have a nice day! \|°▿▿▿▿°|/"
