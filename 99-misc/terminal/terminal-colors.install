@@ -1,0 +1,35 @@
+#!/bin/bash
+
+#"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+#   Filename: terminal-colors.install                                        "
+# Maintainer: Sergio Lepore <sergio.d.lepore@gmail.com>                      "
+#        URL: https://github.com/sergiolepore/.dotfiles                      "
+#                                                                            "
+#"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+. _commons.sh
+
+e_header ">> Setting up terminal colors"
+
+if ! cmd_exists gconftool-2; then
+    sudo apt-get -qq install gconftool-2
+
+    if ! cmd_exists gconftool-2; then
+        e_error "Oops! This script depends on gconftool-2, but it's not installed."
+        exit 1
+    fi
+fi
+
+e_arrow "Installing Monaco Font..."
+
+curl -kL https://raw.githubusercontent.com/cstrap/monaco-font/master/install-font-ubuntu.sh | bash
+
+e_arrow "Backing up previous settings..."
+
+gconftool-2 --dump /apps/gnome-terminal > $DOTFILES/99-misc/terminal/gnome-terminal.xml.bak
+
+e_arrow "Installing new terminal colors..."
+
+gconftool-2 --load $DOTFILES/99-misc/terminal/eyecandy-terminal-colors.xml
+
+e_success "Done."

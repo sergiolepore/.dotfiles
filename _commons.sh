@@ -13,6 +13,7 @@ function e_header()   { echo -e "\n\033[1m$@\033[0m"; }
 function e_success()  { echo -e " \033[1;32m✔\033[0m  $@"; }
 function e_error()    { echo -e " \033[1;31m✖\033[0m  $@"; }
 function e_warning()    { echo -e " \033[1;33m!\033[0m  $@"; }
+function e_arrow()    { echo -e " \033[1;33m→\033[0m  $@"; }
 
 # Check if a given command exists
 function cmd_exists () { type "$1" >/dev/null 2>/dev/null; }
