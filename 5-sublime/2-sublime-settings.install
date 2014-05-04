@@ -22,6 +22,6 @@ if [[ ! -d "$sublime_text_pkg_dir" ]]; then
     mkdir -p $sublime_text_pkg_dir
 fi
 
-ln -sf $DOTFILES/sublime/Packages_User $sublime_text_user_dir
+ln -sf $DOTFILES/5-sublime/Packages_User $sublime_text_user_dir
 
 e_success "Done."

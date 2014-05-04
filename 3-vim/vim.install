@@ -23,3 +23,15 @@ if ! cmd_exists vim; then
 else
     e_warning "Already installed."
 fi
+
+e_header ">> Setting up vim settings folder"
+
+vim_settings_dir="$HOME/.vim"
+
+if [[ -d "${vim_settings_dir}" || -L "${vim_settings_dir}" ]] ; then
+    mv $vim_settings_dir "$vim_settings_dir.bak"
+fi
+
+ln -sf $DOTFILES/3-vim/vim_settings $vim_settings_dir
+
+e_success "Done."

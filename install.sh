@@ -80,7 +80,7 @@ done
 
 e_header "____Copying symlinks____"
 
-symlinks=$(find . -name "*.symlink")
+symlinks=$(find $DOTFILES -name "*.symlink")
 
 overwrite_all=false
 backup_all=false
@@ -120,7 +120,7 @@ for file in $symlinks; do
     fi
 
     echo -e "\n→ Installing $target\n"
-    ln -s "$PWD/$file" "$target"
+    ln -s "$file" "$target"
 done
 
 e_success "Done."

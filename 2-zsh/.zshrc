@@ -71,6 +71,5 @@ source $HOME/.custom_aliases
 source $HOME/.git_aliases
 source $HOME/.node_aliases
 source $HOME/.private_aliases
-#source $HOME/.zsh_highlight_preferences
 
 [ -s "/home/sergio/.nvm/nvm.sh" ] && . "/home/sergio/.nvm/nvm.sh" # This loads nvm
