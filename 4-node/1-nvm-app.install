@@ -8,6 +8,7 @@
 #"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 . _commons.sh
+. ~/.profile
 
 e_header ">> Installing nvm"
 
@@ -16,7 +17,7 @@ if ! cmd_exists curl; then
     exit 1
 fi
 
-if ! cmd_exists nvm; then
+if ! program_is_installed nvm; then
     curl https://raw.githubusercontent.com/creationix/nvm/v0.5.1/install.sh | PROFILE=~/.profile bash
 
     source ~/.profile
