@@ -1,0 +1,25 @@
+#!/bin/bash
+
+#"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+#   Filename: 3-git-extras.install                                           "
+# Maintainer: Sergio Lepore <sergio.d.lepore@gmail.com>                      "
+#        URL: https://github.com/sergiolepore/.dotfiles                      "
+#                                                                            "
+#"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+. _commons.sh
+
+e_header ">> Installing git-extras"
+
+if ! cmd_exists git-extras; then
+    (cd /tmp && git clone --depth 1 https://github.com/visionmedia/git-extras.git && cd git-extras && sudo make install)
+
+    if ! cmd_exists git-extras; then
+        e_error "Oops! Seems that installation failed :("
+        exit 1
+    fi
+
+    e_success "Done."
+else
+    e_warning "Already installed."
+fi
