@@ -32,4 +32,16 @@ e_arrow "Installing new terminal colors..."
 
 gconftool-2 --load $DOTFILES/99-misc/terminal/eyecandy-terminal-colors.xml
 
+
+# override gtk-3 css
+# 
+# place this file: ~/.config/gtk-3.0/gtk.css
+# 
+# with contents:
+#   - for borders: 
+#        TerminalWindow .notebook {
+#           padding: 0;
+#           border-width: 0;
+#        }
+
 e_success "Done."
