@@ -28,9 +28,35 @@
 		"subpixel_antialias"
 	],
 	"font_size": 11,
+	"highlight_line": true,
 	"ignored_packages":
 	[
-		"Vintage"
+		"LaTeX",
+		"Java",
+		"Scala",
+		"Vintage",
+		"Perl",
+		"Lua",
+		"Matlab",
+		"Erlang",
+		"ASP",
+		"C#",
+		"AppleScript",
+		"TCL",
+		"Groovy",
+		"Lisp",
+		"C++",
+		"Objective-C",
+		"R",
+		"PHP Getters and Setters",
+		"Clojure",
+		"GitHub Flavored Markdown Preview",
+		"OCaml",
+		"Graphviz",
+		"Haskell",
+		"ActionScript",
+		"Go",
+		"sublime-swig"
 	],
 	"rulers":
 	[

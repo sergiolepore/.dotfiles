@@ -73,4 +73,6 @@ source $HOME/.git_aliases
 source $HOME/.node_aliases
 source $HOME/.private_aliases
 
-[ -s "/home/sergio/.nvm/nvm.sh" ] && . "/home/sergio/.nvm/nvm.sh" # This loads nvm
+
+export NVM_DIR="/home/sergio/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
