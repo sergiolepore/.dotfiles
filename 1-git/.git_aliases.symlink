@@ -1,5 +1,5 @@
 alias gd="git diff > /tmp/gitdiff ; sublime-text /tmp/gitdiff"
-alias ga="git add"
+alias ga="git add --all"
 alias gbd="git branch -D"
 alias gst="git status"
 alias gcm="git commit -m"
