@@ -1,0 +1,8 @@
+{
+    "sublimelinter_executable_map":
+    {
+        "javascript": "/home/sergio/.nvm/current/bin/node",
+        "node": "/home/sergio/.nvm/current/bin/node"
+    },
+    "sublimelinter_popup_errors_on_save": true
+}

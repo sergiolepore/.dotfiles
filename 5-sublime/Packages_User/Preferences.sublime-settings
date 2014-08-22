@@ -18,7 +18,7 @@
 		}
 	],
 	"caret_style": "phase",
-	"close_windows_when_empty": true,
+	"close_windows_when_empty": false,
 	"color_scheme": "Packages/Monokai Extended/Monokai Extended.tmTheme",
 	"copy_with_empty_selection": false,
 	"create_window_at_startup": false,
