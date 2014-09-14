@@ -1,0 +1,3 @@
+{
+  "jslint": ["~/.nvm/current/bin/node", "~/.config/sublime-text-2/Packages/JSLint/linter.js"]
+}

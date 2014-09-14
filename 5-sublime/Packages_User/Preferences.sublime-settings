@@ -15,6 +15,10 @@
 		{
 			"characters": "->",
 			"selector": "source.php"
+		},
+		{
+			"characters": ".",
+			"selector": "source.js"
 		}
 	],
 	"caret_style": "phase",
@@ -65,6 +69,7 @@
 	],
 	"soda_classic_tabs": true,
 	"soda_folder_icons": true,
+	"tab_size": 2,
 	"theme": "Soda Dark.sublime-theme",
 	"translate_tabs_to_spaces": true,
 	"word_wrap": true

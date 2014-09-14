@@ -8,7 +8,7 @@
             "codeintel_scan_files_in_project": true,
             "codeintel_max_recursive_dir_depth": 20,
             "javascriptExtraPaths": [
-                "/home/sergio/node_modules","/usr/lib/node_modules"
+                "/home/sergio/.nvm"
             ]
         },
         "PHP": {
