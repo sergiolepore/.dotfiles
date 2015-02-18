@@ -1,0 +1,7 @@
+#! /bin/sh
+sleep 1
+synclient FingerHigh=40
+synclient FingerLow=35
+synclient PalmDetect=1
+synclient PalmMinWidth=8
+synclient PalmMinZ=100

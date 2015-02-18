@@ -52,7 +52,7 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-export PATH="/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games"
+export PATH="/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:$HOME/.local/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # # Preferred editor for local and remote sessions
@@ -68,10 +68,14 @@ export PATH="/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 
+# powerline
+[ -z "$TMUX" ] && export TERM=xterm-256color && exec tmux
+
 source $HOME/.custom_aliases
 source $HOME/.git_aliases
 source $HOME/.node_aliases
 source $HOME/.private_aliases
+. $HOME/.local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh
 
 
 export NVM_DIR="/home/sergio/.nvm"

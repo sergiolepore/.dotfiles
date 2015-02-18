@@ -14,5 +14,5 @@ function sublime-text-clean() {
 }
 
 alias ]="xdg-open-clean"
-alias st="sublime-text-clean"
+#alias st="sublime-text-clean"
 alias reload=". ~/.zshrc && echo 'ZSH config reloaded from ~/.zshrc'"

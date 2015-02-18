@@ -1,0 +1,66 @@
+# Change to Screen's ctrl-a escape sequence
+set -g prefix C-a
+unbind C-b
+bind a send-prefix
+set -s escape-time 0
+
+bind R source-file ~/.tmux.conf \; display-message "Config reloaded..."
+bind C new-session
+
+bind C-a last-window
+
+# Turn on window titles
+set -g set-titles on
+
+# Set window title string
+#  #H  Hostname of local host
+#  #I  Current window index
+#  #P  Current pane index
+#  #S  Session name
+#  #T  Current window title
+#  #W  Current window name
+#  #   A literal ‘#’
+#set -g set-titles-string '#(whoami)@#H: #W'
+set -g set-titles-string '#T'
+
+# Automatically set window title
+setw -g automatic-rename on
+
+# Must set default-command to $SHELL, in order to not source ~/.profile
+set -g default-shell $SHELL
+set -g default-terminal "screen-256color"
+set -g terminal-overrides 'xterm*:smcup@:rmcup@'
+set -g update-environment -r
+
+setw -g mode-mouse on
+set mouse-utf8 off
+setw -g mouse-select-pane on
+setw -g mouse-select-window on
+setw -g window-status-attr default
+setw -g window-status-current-attr default
+setw -g automatic-rename on
+setw -g aggressive-resize on
+setw -g monitor-activity on
+set -g visual-activity off
+setw -g xterm-keys on
+
+set -g base-index 1
+set -g status on
+set -g status-utf8 on
+source ~/.local/lib/python2.7/site-packages/powerline/bindings/tmux/powerline.conf
+set -g status-interval 1
+
+setw -g mode-keys vi
+bind -t vi-copy 'v' begin-selection
+bind -t vi-copy 'y' copy-selection
+# move x clipboard into tmux paste buffer
+bind C-p run "xclip -o | tmux load-buffer -"
+# move tmux copy buffer into x clipboard
+bind C-y run "tmux save-buffer - | xclip -i -selection clipboard"
+
+# Rename session
+bind @ command-prompt -p session "attach-session -t '%%'"
+
+# Fix SSH agent on reattach
+set -ga update-environment " DISPLAY SSH_ASKPASS SSH_AUTH_SOCK SSH_AGENT_PID SSH_CONNECTION WINDOWID XAUTHORITY GPG_AGENT_INFO GNOME_KEYRING_CONTROL GNOME_KEYRING_PID GNOME_DESKTOP_SESSION_ID"
+run-shell "powerline-daemon -q"
