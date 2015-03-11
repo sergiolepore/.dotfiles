@@ -62,6 +62,8 @@ export PATH="/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/
 #   export EDITOR='mvim'
 # fi
 
+export EDITOR='vim'
+
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
@@ -77,6 +79,6 @@ source $HOME/.node_aliases
 source $HOME/.private_aliases
 . $HOME/.local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh
 
-
+export NVM_SYMLINK_CURRENT=true
 export NVM_DIR="/home/sergio/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
