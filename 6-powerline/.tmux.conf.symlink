@@ -51,12 +51,13 @@ source ~/.local/lib/python2.7/site-packages/powerline/bindings/tmux/powerline.co
 set -g status-interval 1
 
 setw -g mode-keys vi
-bind -t vi-copy 'v' begin-selection
-bind -t vi-copy 'y' copy-selection
+bind -t vi-copy y copy-pipe 'xclip -in -selection clipboard'
+#bind -t vi-copy 'v' begin-selection
+#bind -t vi-copy 'y' copy-selection
 # move x clipboard into tmux paste buffer
-bind C-p run "xclip -o | tmux load-buffer -"
+#bind C-p run "xclip -o | tmux load-buffer -"
 # move tmux copy buffer into x clipboard
-bind C-y run "tmux save-buffer - | xclip -i -selection clipboard"
+#bind C-y run "tmux save-buffer - | xclip -i -selection clipboard"
 
 # Rename session
 bind @ command-prompt -p session "attach-session -t '%%'"

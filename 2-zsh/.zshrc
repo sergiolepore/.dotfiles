@@ -82,3 +82,11 @@ source $HOME/.private_aliases
 export NVM_SYMLINK_CURRENT=true
 export NVM_DIR="/home/sergio/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
+## python venv
+# where to store our virtual envs
+export WORKON_HOME=$HOME/virtualenvs
+# where projects will reside
+# export PROJECT_HOME=$HOME/Projects-Active
+# where is the virtualenvwrapper.sh
+source $HOME/.local/bin/virtualenvwrapper.sh
