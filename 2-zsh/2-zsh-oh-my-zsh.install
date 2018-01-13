@@ -16,7 +16,7 @@ if ! cmd_exists curl; then
     exit 1
 fi
 
-curl -L http://install.ohmyz.sh | bash
+sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 e_warning "Applying a workaround for \"PAM: Authentication failure\" error"
 
@@ -31,7 +31,10 @@ fi
 
 ln -sf "$DOTFILES/2-zsh/.zshrc" $zshrc_file
 
+mkdir -p /home/sergio/.oh-my-zsh/custom/themes
+wget -O /home/sergio/.oh-my-zsh/custom/themes/hyperzsh.zsh-theme https://raw.githubusercontent.com/tylerreckart/hyperzsh/master/hyperzsh.zsh-theme
+
 e_success "Done."
 
-#e_warning "HEADS UP! You MUST logout and login again to load zsh and oh-my-zsh"
-#e_warning "This script will stop now. Once you are logged in, restart ./install.sh and skip all scripts that you already executed"
+e_warning "HEADS UP! You MUST logout and login again to load zsh and oh-my-zsh"
+e_warning "This script will stop now. Once you are logged in, restart ./install.sh and skip all scripts that you already executed"
