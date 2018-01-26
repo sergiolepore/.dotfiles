@@ -17,11 +17,7 @@ if ! cmd_exists curl; then
     exit 1
 fi
 
-if ! cmd_exists bison; then
-    sudo apt-get -qq install bison
-
-    e_success "Done."
-fi
+sudo apt-get -qq install mercurial make binutils bison gcc build-essential
 
 if ! cmd_exists nvm; then
     zsh < <(curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer)
