@@ -1,0 +1,32 @@
+#!/bin/bash
+
+#"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+#   Filename: 1-gvm-app.install                                              "
+# Maintainer: Sergio Lepore <sergio.d.lepore@gmail.com>                      "
+#        URL: https://github.com/sergiolepore/.dotfiles                      "
+#                                                                            "
+#"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+. _commons.sh
+. ~/.profile
+
+e_header ">> Installing gvm"
+
+if ! cmd_exists curl; then
+    e_error "Oops! curl is not installed. Did you run the \"tools\" script?"
+    exit 1
+fi
+
+if ! cmd_exists bison; then
+    sudo apt-get -qq install bison
+
+    e_success "Done."
+fi
+
+if ! cmd_exists nvm; then
+    zsh < <(curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer)
+
+    e_success "Done."
+else
+    e_warning "Already installed."
+fi
