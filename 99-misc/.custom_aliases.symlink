@@ -7,3 +7,4 @@ function xdg-open-clean() {
 
 alias ]="xdg-open-clean"
 alias reload=". ~/.zshrc && echo 'ZSH config reloaded from ~/.zshrc'"
+alias nodejs=node

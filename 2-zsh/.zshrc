@@ -133,4 +133,3 @@ load-nvmrc
 # command completion
 [[ -r $NVM_DIR/bash_completion ]] && . $NVM_DIR/bash_completion
 
-[[ -s "/home/sergio/.gvm/scripts/gvm" ]] && source "/home/sergio/.gvm/scripts/gvm"
